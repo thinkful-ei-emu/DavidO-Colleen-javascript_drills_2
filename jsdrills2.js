@@ -8,4 +8,22 @@ function jediName(firstName, lastName){
   return jediWhole;
 }
 
-jediName('Beyonce', 'Knowles')
+jediName('Beyonce', 'Knowles');
+
+function beyond(num){
+  if (isFinite(num) !== true) {
+    console.log('and beyond');
+  }
+  if (isFinite(num) === true && num >= 0){
+    console.log('to infinity');
+  }
+  if (isFinite(num) === true && num <= 0){
+    console.log('to negative infinity');
+  }
+  if (num === 0){
+    console.log('staying home');
+  }
+
+}
+
+beyond(Infinity);
