@@ -31,54 +31,54 @@ beyond(Infinity);
 
 
 //this function creates a random value from the computer
-function computerPlay(){
-  let words = ['rock', 'paper', 'scissors'];
-  let number = Math.floor(Math.random() * words.length);
-  let computerSelection = words[number];
-  return computerSelection;
-}
-// this function gets the player input
-function playerPlay(){
-  let playerInput = prompt("Rock, paper, scissors, shoot!");
-  let playerSelection = playerInput.toLowerCase();
-  if (playerSelection == null){
-    return 'Try Again'
-  } else {
-    return playerSelection;
-  }
-}
 
 // this plays one round of the game 
-function playRound(playerTurn, computerTurn) {
+function playRound(playerTurn) {
+  try {
+    if (playerTurn === '') throw new Error('empty');
+    if (isNaN(playerTurn)) throw new Error('not a number');
+    if (playerTurn < 1) throw new Error('too low');
+    if (playerTurn >3) throw new Error ('too high');
+  }
+  catch(e){
+    console.log(e.message);
+    return e.message;
+  }
+ 
+  let computerTurn = Math.floor(Math.random() * 3) + 1;
+  console.log(computerTurn);
+  
   if (computerTurn === playerTurn){
     console.log('tie');   
-    return "It's a tie";
+    return 'It\'s a tie';
   }
-  else if (computerTurn === 'rock') {
-    if (playerTurn === 'scissors'){
-      console.log('loseerrrr');
+  else if (computerTurn === 1) {
+    if (playerTurn === 3){
+      console.log('loser');
       return "You lose, rock beats scissors";
     } else {
-      console.log ('winnnerrr');
+      console.log ('winner');
       return "You win, paper beats rock";
     }
   }
-  else if (computerTurn === 'paper'){
-    if (playerTurn === 'rock'){
-      console.log ('looosserr');
+  else if (computerTurn === 2){
+    if (playerTurn === 1){
+      console.log ('loser');
       return "You lose, paper beats rock";
     } else {
-      console.log ('winnnneerrr');
+      console.log ('winner');
       return "You win, scissors beats paper";
     }
   }
   else {
-    if (playerTurn === 'rock'){
-      console.log ('winnnnerrr');
+    if (playerTurn === 1){
+      console.log ('winner');
       return "You win, rock beats scissors";
     } else {
-      console.log ('loooserrr');
+      console.log ('loser');
       return "You lose, scissors beats paper";
     }
   }
 }
+
+playRound(2);
