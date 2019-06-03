@@ -30,9 +30,7 @@ beyond(Infinity);
 
 
 
-//this function creates a random value from the computer
 
-// this plays one round of the game 
 function playRound(playerTurn) {
   try {
     if (playerTurn === '') throw new Error('empty');
