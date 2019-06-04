@@ -1,0 +1,29 @@
+function daysInMonth(month,leapYear = undefined ){
+    switch(month){
+        case "February":
+            if(leapYear % 4 == 0)
+              days = 29;
+            else{
+              days = 28
+            }
+            break;
+        case "April":
+        case "June":
+        case "September":
+        case "November":
+            days = 30
+            break;
+        case "January":    
+        case "March":    
+        case "May":    
+        case "July":            
+        case "August":            
+        case "October":            
+        case "December":
+            days = 31
+            break;    
+        default:
+            "Must provide a valid month";
+            break;                                 
+    } return `${month} has ${days} days`
+}
