@@ -1,0 +1,27 @@
+function decode(word){
+    let message = "";
+    if (word[0] == "a"){
+      message += word[1];
+    }
+    else if (word[0] == "b"){
+      message += word[2];
+    }
+    else if (word[0] == "c"){
+      message += word[3];
+    }
+    else if (word[0] == "d"){
+      message += word[4];
+    }
+    else{
+      message += " ";
+    }
+  return message;   
+  }
+  console.log(decode("craft"))
+  console.log(decode("block"))
+  console.log(decode("argon"))
+  console.log(decode("meter"))
+  console.log(decode("bells"))
+  console.log(decode("brown"))
+  console.log(decode("croon"))
+  console.log(decode("droop"))
